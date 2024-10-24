@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-import AllCardContainer from './components/AllCardContainer/AllCardContainer'
+import CardContainer from './components/CardContainer/CardContainer'
 import Banner from './components/Banner/Banner'
 import Navbar from './components/Navbar/Navbar'
+import AllPlayers from './components/AllPlayers/AllPlayers'
 
 function App() {
  const[isActive,setIsActive] = useState({
@@ -31,7 +32,8 @@ function App() {
     <div className='mx-12'>
      <Navbar></Navbar>
      <Banner></Banner>
-     <AllCardContainer handleIsActive={handleIsActive} isActive={isActive}></AllCardContainer>
+     <CardContainer handleIsActive={handleIsActive} isActive={isActive}></CardContainer>
+     <AllPlayers></AllPlayers>
     </div>
   )
 }

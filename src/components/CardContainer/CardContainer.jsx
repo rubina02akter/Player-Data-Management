@@ -1,5 +1,5 @@
-import './AllCardContainer.css'
-const AllCardContainer = ({handleIsActive,isActive}) => {
+import './CardContainer.css'
+const CardContainer = ({handleIsActive,isActive}) => {
   return (
     <div className="mt-12">
       <div className="flex justify-between">
@@ -17,4 +17,4 @@ const AllCardContainer = ({handleIsActive,isActive}) => {
   );
 };
 
-export default AllCardContainer;
+export default CardContainer;

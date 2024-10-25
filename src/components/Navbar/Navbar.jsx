@@ -1,8 +1,8 @@
 
 
-const Navbar = () => {
+const Navbar = ({coins}) => {
   return (
-    <div className="container mx-auto mb-6">
+    <div className="container mb-6 ">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -24,7 +24,7 @@ const Navbar = () => {
             </div>
           
           </div>
-          <a className="btn btn-ghost text-xl">
+          <a className="btn btn-ghost text-xl ml-12">
             <img src="logo.png" alt="" />
           </a>
         </div>
@@ -44,9 +44,9 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end mr-12">
          <button className="btn border-2 bg-white">
-          <span>0</span>Coin
+        <span>{coins}</span>Coin
           <img className="w-6" src="coin.png" alt="" />
           </button>
         </div>

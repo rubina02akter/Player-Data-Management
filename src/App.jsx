@@ -42,26 +42,6 @@ const handleCoinBtn = () => {
 
  }
 
-//selected player show
-// const handleSelectPlayer = (player) => {
-//   setSelectedPlayers((prev) => [...prev, player]);
-// };
-// const handleSelectPlayer = (player) => {
-//   setSelectedPlayers((prev) => {
-   
-//     const matchingPlayers = prev.filter((selected) => selected.playerId === player.playerId);
-//     return [...prev, player];
-//     if (matchingPlayers.length === 0) {
-//       return [...prev, player];
-//     }
-    
-//       // else {
-//       toast(`Player ${player.name} is already selected!`);
-//       return prev; 
-//     }
-//   });
-// };
-
 const handleSelectPlayer = (player) => {
   setSelectedPlayers((prev) => {
    
@@ -76,11 +56,17 @@ const handleSelectPlayer = (player) => {
   });
 };
 
+//handle delete player
+const handleDeletePlayer = (playerId) => {
+  setSelectedPlayers((prev) => prev.filter((player) => player.playerId !== playerId));
+};
+
+
   return (
     <div>
      <Navbar coins={coins}></Navbar>
      <Banner handleCoinBtn={handleCoinBtn}></Banner>
-     <CardContainer handleIsActive={handleIsActive} isActive={isActive} handleSelectPlayer={handleSelectPlayer} selectedPlayers={selectedPlayers}></CardContainer>
+     <CardContainer handleIsActive={handleIsActive} isActive={isActive} handleSelectPlayer={handleSelectPlayer} selectedPlayers={selectedPlayers} handleDeletePlayer={handleDeletePlayer}></CardContainer>
      <Subscribe></Subscribe>
      <Footer></Footer>
      <ToastContainer 

@@ -2,7 +2,7 @@ import './Subscribe.css'
 
 const Subscribe = () => {
   return (
-    <div className='flex flex-col justify-center items-center space-y-3 mt-12'>
+    <div className='flex flex-col justify-center items-center space-y-3 mt-32 border-2 mx-40 bg-red-50 '>
       <h2 className='font-bold text-3xl'>Subscribe to our Newsletter</h2>
       <p className='text-gray-700'>Get the latest updates and news right in your inbox!</p>
       <div>

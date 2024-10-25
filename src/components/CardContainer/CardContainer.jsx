@@ -1,7 +1,7 @@
 import AllPlayers from "../AllPlayers/AllPlayers";
 import SelectedPlayers from "../SelectedPlayers/SelectedPlayers";
 import "./CardContainer.css";
-const CardContainer = ({ handleIsActive, isActive, handleSelectPlayer, selectedPlayers }) => {
+const CardContainer = ({ handleIsActive, isActive, handleSelectPlayer, selectedPlayers,handleDeletePlayer}) => {
   return (
     <div>
       <div className="mt-12  mx-12">
@@ -34,7 +34,7 @@ const CardContainer = ({ handleIsActive, isActive, handleSelectPlayer, selectedP
       {isActive.cart ? (
         <AllPlayers handleSelectPlayer={handleSelectPlayer}></AllPlayers>
       ) : (
-        <SelectedPlayers handleIsActive={handleIsActive} selectedPlayers={selectedPlayers}></SelectedPlayers>
+        <SelectedPlayers handleIsActive={handleIsActive} selectedPlayers={selectedPlayers} handleDeletePlayer={handleDeletePlayer}></SelectedPlayers>
       )}
     </div>
   );

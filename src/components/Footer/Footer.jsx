@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return (
-    <div className="text-white bg-[#06091A] mt-56 p-12">
+    <div className="text-white bg-[#06091A] p-12">
       <div className="flex justify-center items-center"><img src="logo-footer.png" alt="" /></div>
      
       <div  className="grid grid-cols-3 gap-20 mt-12 ">

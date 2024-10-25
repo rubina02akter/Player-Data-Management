@@ -1,5 +1,5 @@
 import './Player.css'
-const Player = ({player}) => {
+const Player = ({player,handleSelectPlayer}) => {
   const{playerId,name,country,image,role,battingType,biddingPrice} = player
   return (
     <div className='card space-y-3'>
@@ -14,7 +14,7 @@ const Player = ({player}) => {
       <p className='font-semibold'>{battingType}</p>
       <div className='flex justify-between items-center text-center'>
         <p className='font-semibold'>Price: ${biddingPrice}</p>
-        <button className='btn'>Choose Player</button>
+        <button onClick={() => handleSelectPlayer(player)} className='btn'>Choose Player</button>
       </div>
     </div>
   );

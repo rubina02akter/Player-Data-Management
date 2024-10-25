@@ -1,5 +1,5 @@
 
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast,Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Navbar = ({coins}) => {
   return (
@@ -52,7 +52,7 @@ const Navbar = ({coins}) => {
           </button>
         </div>
       </div>
-      <ToastContainer 
+      {/* <ToastContainer 
       position="top-center"
       autoClose={3000}
       hideProgressBar={false}
@@ -60,7 +60,8 @@ const Navbar = ({coins}) => {
       pauseOnHover={true}
       draggable={true}
       progress={undefined}
-      />
+      transition={Bounce}
+      /> */}
     </div>
   );
 };

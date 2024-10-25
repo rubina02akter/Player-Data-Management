@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Player from "../Player/Player";
 
 
-const AllPlayers = () => {
+const AllPlayers = ({handleSelectPlayer}) => {
  const [players, setPlayers] = useState([]);
 
  useEffect(() => {
@@ -21,7 +21,7 @@ const AllPlayers = () => {
   return (
     <div className="grid grid-cols-3 gap-6 mt-5 mx-12">
     {
-      players.map((p)=><Player player={p}></Player>)
+      players.map((p)=><Player key={p.playerId} player={p} handleSelectPlayer={handleSelectPlayer}></Player>)
     }
     </div>
   );

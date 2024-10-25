@@ -3,14 +3,15 @@ import './App.css'
 import CardContainer from './components/CardContainer/CardContainer'
 import Banner from './components/Banner/Banner'
 import Navbar from './components/Navbar/Navbar'
-import AllPlayers from './components/AllPlayers/AllPlayers'
+
 import Footer from './components/Footer/Footer'
 import Subscribe from './components/SubscribeField/Subscribe'
-import { toast } from 'react-toastify'
+import { ToastContainer, toast,Bounce } from 'react-toastify';
 
 function App() {
   //Credin value added
-const [coins,setCoins] = useState(0)
+const [coins,setCoins] = useState(0);
+const [selectedPlayers, setSelectedPlayers] = useState([]);
 const handleCoinBtn = () => {
   setCoins(coins + 6000000);
 
@@ -41,16 +42,57 @@ const handleCoinBtn = () => {
 
  }
 
+//selected player show
+// const handleSelectPlayer = (player) => {
+//   setSelectedPlayers((prev) => [...prev, player]);
+// };
+// const handleSelectPlayer = (player) => {
+//   setSelectedPlayers((prev) => {
+   
+//     const matchingPlayers = prev.filter((selected) => selected.playerId === player.playerId);
+//     return [...prev, player];
+//     if (matchingPlayers.length === 0) {
+//       return [...prev, player];
+//     }
+    
+//       // else {
+//       toast(`Player ${player.name} is already selected!`);
+//       return prev; 
+//     }
+//   });
+// };
 
+const handleSelectPlayer = (player) => {
+  setSelectedPlayers((prev) => {
+   
+    const matchingPlayers = prev.filter((selected) => selected.playerId === player.playerId);
+
+    if (matchingPlayers.length === 0) {
+      return [...prev, player];
+    } else {
+      toast(`Player ${player.name} is already selected!`);
+      return prev; 
+    }
+  });
+};
 
   return (
     <div>
      <Navbar coins={coins}></Navbar>
      <Banner handleCoinBtn={handleCoinBtn}></Banner>
-     <CardContainer handleIsActive={handleIsActive} isActive={isActive}></CardContainer>
-     <AllPlayers></AllPlayers>
+     <CardContainer handleIsActive={handleIsActive} isActive={isActive} handleSelectPlayer={handleSelectPlayer} selectedPlayers={selectedPlayers}></CardContainer>
      <Subscribe></Subscribe>
      <Footer></Footer>
+     <ToastContainer 
+      position="top-center"
+      autoClose={3000}
+      hideProgressBar={false}
+      closeOnClick={true}
+      pauseOnHover={true}
+      draggable={true}
+      progress={undefined}
+      transition={Bounce}
+      />
     </div>
   )
 }

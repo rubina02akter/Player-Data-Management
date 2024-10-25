@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Navbar = ({coins}) => {
   return (
     <div className="container mb-6 ">
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 flex justify-between">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,6 +29,7 @@ const Navbar = ({coins}) => {
             <img src="logo.png" alt="" />
           </a>
         </div>
+        <div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
@@ -45,23 +46,16 @@ const Navbar = ({coins}) => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end mr-12">
-         <button className="btn border-2 bg-white">
+        <div className="navbar-end ">
+         <button className="btn border-2 mr-10 bg-white">
         <span>{coins}</span>Coin
-          <img className="w-6" src="coin.png" alt="" />
+          <img className="w-5" src="coin.png" alt="" />
           </button>
         </div>
+        </div>
+
       </div>
-      {/* <ToastContainer 
-      position="top-center"
-      autoClose={3000}
-      hideProgressBar={false}
-      closeOnClick={true}
-      pauseOnHover={true}
-      draggable={true}
-      progress={undefined}
-      transition={Bounce}
-      /> */}
+
     </div>
   );
 };

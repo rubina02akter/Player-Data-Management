@@ -42,13 +42,38 @@ const handleCoinBtn = () => {
 
  }
 
+// const handleSelectPlayer = (player) => {
+//   setSelectedPlayers((prev) => {
+//     const matchingPlayers = prev.filter((selected) => selected.playerId === player.playerId);
+
+//     if (matchingPlayers.length === 0) {
+//       toast(`Player selected!`);
+//       return [...prev, player];
+//     } else {
+//       toast(`Player ${player.name} is already selected!`);
+//       return prev; 
+//     }
+//   });
+// };
 const handleSelectPlayer = (player) => {
   setSelectedPlayers((prev) => {
-   
     const matchingPlayers = prev.filter((selected) => selected.playerId === player.playerId);
-
+    const price = `${player.biddingPrice}`;
     if (matchingPlayers.length === 0) {
-      return [...prev, player];
+      
+      if (prev.length >= 6) {
+        toast(`You can only select up to 6 players.`);
+        return prev;
+      }
+      // Check if there are enough coins
+      if (coins >= price) {
+        setCoins(coins - price);
+        toast(`Player ${player.name} selected!`);
+        return [...prev, player];
+      } else {
+        toast(`Not enough coins to select ${player.name}.`);
+        return prev; 
+      }
     } else {
       toast(`Player ${player.name} is already selected!`);
       return prev; 
@@ -71,7 +96,7 @@ const handleDeletePlayer = (playerId) => {
      <Footer></Footer>
      <ToastContainer 
       position="top-center"
-      autoClose={3000}
+      autoClose={2000}
       hideProgressBar={false}
       closeOnClick={true}
       pauseOnHover={true}

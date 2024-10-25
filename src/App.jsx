@@ -5,7 +5,7 @@ import Banner from './components/Banner/Banner'
 import Navbar from './components/Navbar/Navbar'
 
 import Footer from './components/Footer/Footer'
-import Subscribe from './components/SubscribeField/Subscribe'
+
 import { ToastContainer, toast,Bounce } from 'react-toastify';
 
 function App() {
@@ -92,7 +92,6 @@ const handleDeletePlayer = (playerId) => {
      <Navbar coins={coins}></Navbar>
      <Banner handleCoinBtn={handleCoinBtn}></Banner>
      <CardContainer handleIsActive={handleIsActive} isActive={isActive} handleSelectPlayer={handleSelectPlayer} selectedPlayers={selectedPlayers} handleDeletePlayer={handleDeletePlayer}></CardContainer>
-     <Subscribe></Subscribe>
      <Footer></Footer>
      <ToastContainer 
       position="top-center"

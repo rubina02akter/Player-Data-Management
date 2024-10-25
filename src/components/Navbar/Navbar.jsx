@@ -3,8 +3,8 @@
 import 'react-toastify/dist/ReactToastify.css';
 const Navbar = ({coins}) => {
   return (
-    <div className="container mb-6 ">
-      <div className="navbar bg-base-100 flex justify-between">
+    <div className="container mb-6 bg-opacity-60  sticky top-0 bg-transparent  bg-opacity-60 backdrop-blur-lg py-4 z-10 ">
+      <div className="navbar flex justify-between">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

@@ -1,5 +1,6 @@
 
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Navbar = ({coins}) => {
   return (
     <div className="container mb-6 ">
@@ -51,6 +52,15 @@ const Navbar = ({coins}) => {
           </button>
         </div>
       </div>
+      <ToastContainer 
+      position="top-center"
+      autoClose={3000}
+      hideProgressBar={false}
+      closeOnClick={true}
+      pauseOnHover={true}
+      draggable={true}
+      progress={undefined}
+      />
     </div>
   );
 };

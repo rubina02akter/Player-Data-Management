@@ -6,15 +6,21 @@ import Navbar from './components/Navbar/Navbar'
 import AllPlayers from './components/AllPlayers/AllPlayers'
 import Footer from './components/Footer/Footer'
 import Subscribe from './components/SubscribeField/Subscribe'
+import { toast } from 'react-toastify'
 
 function App() {
+  //Credin value added
 const [coins,setCoins] = useState(0)
 const handleCoinBtn = () => {
   setCoins(coins + 6000000);
+
+  //tostify here
+
+  toast(`Credit added to your Account`)
 };
 
 
-
+//active handler 
  const[isActive,setIsActive] = useState({
   cart:true,
   status: "available"

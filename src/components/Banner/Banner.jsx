@@ -1,5 +1,5 @@
 import './Banner.css'
-import { useState } from 'react';
+
 const Banner = ({handleCoinBtn}) => {
 
   return (

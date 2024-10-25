@@ -1,3 +1,6 @@
+
+import AllPlayers from '../AllPlayers/AllPlayers';
+import SelectedPlayers from '../SelectedPlayers/SelectedPlayers';
 import './CardContainer.css'
 const CardContainer = ({handleIsActive,isActive}) => {
   return (
@@ -5,7 +8,7 @@ const CardContainer = ({handleIsActive,isActive}) => {
       <div className="flex justify-between">
         <h2 className="font-bold text-2xl">Available Players</h2>
         <div className="flex">
-          <button
+       <button
           onClick={()=>{handleIsActive("available")}}
            className={`${isActive.cart?"btn rounded-none active":"btn rounded-none"}`}>Available</button>
           <button

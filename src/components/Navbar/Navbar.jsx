@@ -25,7 +25,7 @@ const Navbar = ({coins}) => {
             </div>
           
           </div>
-          <a className="btn btn-ghost text-xl ml-12">
+          <a className="btn btn-ghost text-xl ml-0 lg:ml-12">
             <img src="logo.png" alt="" />
           </a>
         </div>

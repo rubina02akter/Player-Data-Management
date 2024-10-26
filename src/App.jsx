@@ -17,7 +17,7 @@ const handleCoinBtn = () => {
 
   //tostify here
 
-  toast(`Credit added to your Account`)
+  toast.success(`Credit added to your Account`)
 };
 
 
@@ -42,19 +42,6 @@ const handleCoinBtn = () => {
 
  }
 
-// const handleSelectPlayer = (player) => {
-//   setSelectedPlayers((prev) => {
-//     const matchingPlayers = prev.filter((selected) => selected.playerId === player.playerId);
-
-//     if (matchingPlayers.length === 0) {
-//       toast(`Player selected!`);
-//       return [...prev, player];
-//     } else {
-//       toast(`Player ${player.name} is already selected!`);
-//       return prev; 
-//     }
-//   });
-// };
 const handleSelectPlayer = (player) => {
   setSelectedPlayers((prev) => {
     const matchingPlayers = prev.filter((selected) => selected.playerId === player.playerId);
@@ -62,20 +49,20 @@ const handleSelectPlayer = (player) => {
     if (matchingPlayers.length === 0) {
       
       if (prev.length >= 6) {
-        toast(`You can only select up to 6 players.`);
+        toast.warning(`You can only select up to 6 players.`);
         return prev;
       }
       // Check if there are enough coins
       if (coins >= price) {
         setCoins(coins - price);
-        toast(`Player ${player.name} selected!`);
+        toast.success(`Player ${player.name} selected!`);
         return [...prev, player];
       } else {
-        toast(`Not enough coins to select ${player.name}.`);
+        toast.error(`Not enough coins to select ${player.name}.`);
         return prev; 
       }
     } else {
-      toast(`Player ${player.name} is already selected!`);
+      toast.info(`Player ${player.name} is already selected!`);
       return prev; 
     }
   });
@@ -84,6 +71,7 @@ const handleSelectPlayer = (player) => {
 //handle delete player
 const handleDeletePlayer = (playerId) => {
   setSelectedPlayers((prev) => prev.filter((player) => player.playerId !== playerId));
+
 };
 
 

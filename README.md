@@ -1,8 +1,18 @@
-# React + Vite
+# Cricket Team Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Cricket Team Manager is a React application that allows users to create and manage their own cricket teams by selecting players based on available coins. Users can easily navigate through player selections, manage their budget, and enjoy a seamless experience while building their dream cricket team.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+
+- **React**: For building the user interface.
+- **React Toastify**: For enhanced user notifications and alerts.
+- **JSON**: For storing player data.
+- **CSS**: For styling and layout.
+
+## Key Features
+
+1. **Dynamic Player Selection**: Users can view available players, select them, and manage their team while adhering to budget constraints.
+2. **Coin Management System**: Users start with 0 coins and can earn coins to bid on players through an interactive button.
+3. **Real-Time Feedback**: Notifications provided via React Toastify to inform users about successful selections, errors, and updates in real-time.
